@@ -21,3 +21,10 @@ function hello_elementor_child_enqueue_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20 );
+
+// Remove titles in Hello theme
+add_filter( 'hello_elementor_page_title', '__return_false' );
+
+// Disable Gutenberg
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
